@@ -29,7 +29,6 @@
     <link th:href="@{/static/css/pricing.css}" rel="stylesheet">
 </head>
 <body>
-</div>
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
     <h5 class="my-0 mr-md-auto font-weight-normal">PCB 商城</h5>
     <nav class="my-2 my-md-0 mr-md-3">
@@ -129,174 +128,248 @@
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                     <form class="needs-validation" novalidate="">
-                        <div class="form-row align-items-center">
+                        <div class="form-row form-group">
                             <div class="col-auto">
-                                <label class="sr-only" for="inlineFormInput">Name</label>
-                                <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Jane Doe">
-                            </div>
-                            <div class="col-auto">
-                                <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text">@</div>
+                                        <div class="input-group-text">板子数量</div>
                                     </div>
-                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                                    <input type="text" class="form-control" id="" placeholder="0">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">单片(pcs)</div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-row  form-group">
                             <div class="col-auto">
-                                <div class="form-check mb-2">
-                                    <label class="text-muted" >
-                                        尺寸大小:
-                                    </label>
+                                <small id="HelpInline" class="text-muted">
+                                    *尺寸可以精确到2位小数；如与文件尺寸有差异，以文件为准。
+                                </small>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">高度/Y</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="" placeholder="0">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">宽度/X</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="" placeholder="0">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">CM</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">板子层数:</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>4</option>
+                                <option>6</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">出货方式:</label>
+                            <select class="form-control" id="">
+                                <option>客户单片材料单片出货</option>
+                                <option>客户版资料拼版出货</option>
+                                <option>其他方式2</option>
+                                <option>其他方式3</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">板材品牌:</label>
+                            <select class="form-control" id="">
+                                <option>品牌1</option>
+                                <option>品牌2</option>
+                                <option>品牌3</option>
+                                <option>品牌5</option>
+                            </select>
+                        </div>
+                        <div class="form-row  form-group">
+                            <div class="col-auto">
+                                <small id="HelpInline" class="text-muted">
+                                    *(注：是指文件内不同款的板子个数)
+                                </small>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">拼版款数</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="" placeholder="0">
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
                         <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="firstName">First name</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-                                <div class="invalid-feedback">
-                                    Valid first name is required.
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="lastName">Last name</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-                                <div class="invalid-feedback">
-                                    Valid last name is required.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="username">Username</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">@</span>
-                                </div>
-                                <input type="text" class="form-control" id="username" placeholder="Username" required="">
-                                <div class="invalid-feedback" style="width: 100%;">
-                                    Your username is required.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
-                            <div class="invalid-feedback">
-                                Please enter a valid email address for shipping updates.
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
-                            <div class="invalid-feedback">
-                                Please enter your shipping address.
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-                            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-5 mb-3">
-                                <label for="country">Country</label>
+                            <div class="col-md-3 mb-3">
+                                <label for="country">FR-4 TG值:</label>
                                 <select class="custom-select d-block w-100" id="country" required="">
-                                    <option value="">Choose...</option>
-                                    <option>United States</option>
+                                    <option>FR140</option>
+                                    <option>TG150</option>
+                                    <option>TG170</option>
                                 </select>
-                                <div class="invalid-feedback">
-                                    Please select a valid country.
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="state">State</label>
-                                <select class="custom-select d-block w-100" id="state" required="">
-                                    <option value="">Choose...</option>
-                                    <option>California</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please provide a valid state.
-                                </div>
+
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label for="zip">Zip</label>
-                                <input type="text" class="form-control" id="zip" placeholder="" required="">
-                                <div class="invalid-feedback">
-                                    Zip code required.
-                                </div>
+                                <label for="country">铜箔厚度(外层)：</label>
+                                <select class="custom-select d-block w-100" id="country" required="">>
+                                    <option>1oz</option>
+                                    <option>2oz</option>
+                                </select>
+
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="">最小线宽/线距：</label>
+                                <select class="custom-select d-block w-100" id="" required="">
+                                    <option>4/4mil</option>
+                                    <option>5/5mil</option>
+                                    <option>6/6mil</option>
+                                    <option>8/8mil</option>
+                                    <option>10/10mil</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="">最小孔径：</label>
+                                <select class="custom-select d-block w-100" id="" required="">
+                                    <option>0.25mm</option>
+                                    <option>0.3mm</option>
+                                    <option>0.35mm</option>
+                                    <option>0.4mm</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="country">板子厚度:</label>
+                                <select class="custom-select d-block w-100" id="country" required="">
+                                    <option>0.4</option>
+                                    <option>0.6</option>
+                                    <option>0.8</option>
+                                    <option>1.0</option>
+                                    <option>1.2</option>
+                                    <option selected>1.6</option>
+                                    <option>2.0</option>
+                                    <option>2.4</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="country">焊接颜色：</label>
+                                <select class="custom-select d-block w-100" id="country" required="">
+                                    <option>无</option>
+                                    <option>绿色</option>
+                                    <option>黑色</option>
+                                    <option>白色</option>
+                                    <option>黄色</option>
+                                    <option>红色</option>
+                                    <option>蓝色</option>
+                                    <option>亚光黑</option>
+                                    <option>亚光绿</option>
+                                </select>
+
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="">字符颜色：</label>
+                                <select class="custom-select d-block w-100" id="" required="">
+                                    <option>无</option>
+                                    <option>绿色</option>
+                                    <option>黑色</option>
+                                    <option>白色</option>
+                                    <option>黄色</option>
+                                    <option>红色</option>
+                                    <option>蓝色</option>
+                                    <option>亚光黑</option>
+                                    <option>亚光绿</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="">阻焊覆盖：</label>
+                                <select class="custom-select d-block w-100" id="" required="">
+                                    <option>过孔盖油</option>
+                                    <option>过孔开窗</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="">焊盘表面处理：</label>
+                                <select class="custom-select d-block w-100" id="" required="">
+                                    <option>裸铜</option>
+                                    <option>无铅喷锡</option>
+                                    <option>沉金</option>
+                                    <option>OSP</option>
+                                </select>
+                            </div>
+                            <div class="col-md-5 mb-3">
+                                <label for="">测试方式：</label>
+                                <select class="custom-select d-block w-100" id="" required="">
+                                    <option>AOI+测试(免费)</option>
+                                </select>
                             </div>
                         </div>
                         <hr class="mb-4">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="same-address">
-                            <label class="custom-control-label" for="same-address">Shipping address is the same as my billing
-                                address</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="save-info">
-                            <label class="custom-control-label" for="save-info">Save this information for next time</label>
-                        </div>
-                        <hr class="mb-4">
 
-                        <h4 class="mb-3">Payment</h4>
+                        <h4 class="mb-3">确认生产稿选项</h4>
 
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
-                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked=""
+                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
+                                       checked=""
                                        required="">
-                                <label class="custom-control-label" for="credit">Credit card</label>
+                                <label class="custom-control-label" for="credit">需 要</label>
                             </div>
                             <div class="custom-control custom-radio">
-                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                                <label class="custom-control-label" for="debit">Debit card</label>
+                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
+                                       required="">
+                                <label class="custom-control-label" for="debit">不需要</label>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+
+                        <h4 class="mb-3">CAM高端个性化服务</h4>
+
+                        <div class="d-block my-3">
+                            <div class="custom-control custom-radio">
+                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
+                                       checked=""
+                                       required="">
+                                <label class="custom-control-label" for="credit">中级工程师</label>
                             </div>
                             <div class="custom-control custom-radio">
-                                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                                <label class="custom-control-label" for="paypal">PayPal</label>
+                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
+                                       required="">
+                                <label class="custom-control-label" for="debit">高级工程师</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
+                                       required="">
+                                <label class="custom-control-label" for="debit">资深工程师</label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="cc-name">Name on card</label>
-                                <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                                <small class="text-muted">Full name as displayed on card</small>
-                                <div class="invalid-feedback">
-                                    Name on card is required
+                        <hr class="mb-4">
+
+                        <h4 class="mb-3">其他特殊选项</h4>
+                        <div class="d-block my-3">
+                            <small id="HelpInline" class="text-muted">
+                                *BGA最小焊盘0.25mm
+                            </small>
+                            <div class="input-group  col-5 " style="padding-left: 0px;">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon3">BGA数量</span>
                                 </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="cc-number">Credit card number</label>
-                                <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-                                <div class="invalid-feedback">
-                                    Credit card number is required
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label for="cc-expiration">Expiration</label>
-                                <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
-                                <div class="invalid-feedback">
-                                    Expiration date required
-                                </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="cc-cvv">CVV</label>
-                                <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
-                                <div class="invalid-feedback">
-                                    Security code required
+                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">个</span>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...
+                </div>
             </div>
         </div>
     </div>
@@ -331,7 +404,7 @@
                 <h5>About</h5>
                 <ul class="list-unstyled text-small">
                     <li><a class="text-muted" href="#">Team</a></li>
-                    <li><a class="text-muted" href="#">Locations</a></li>
+                    <li><a class="text-muted" th:href="@{/support/view}">技术支持</a></li>
                     <li><a class="text-muted" href="#">Privacy</a></li>
                     <li><a class="text-muted" href="#">Terms</a></li>
                 </ul>
