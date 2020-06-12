@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <title>图书系统 · Book Mall</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/static/css/bootstrap.css}" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link th:href="@{/static/css/pricing.css}" rel="stylesheet">
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+        <svg class="bi bi-book-half" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                  d="M12.786 1.072C11.188.752 9.084.71 7.646 2.146A.5.5 0 0 0 7.5 2.5v11a.5.5 0 0 0 .854.354c.843-.844 2.115-1.059 3.47-.92 1.344.14 2.66.617 3.452 1.013A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.276-.447L15.5 2.5l.224-.447-.002-.001-.004-.002-.013-.006-.047-.023a12.582 12.582 0 0 0-.799-.34 12.96 12.96 0 0 0-2.073-.609zM15 2.82v9.908c-.846-.343-1.944-.672-3.074-.788-1.143-.118-2.387-.023-3.426.56V2.718c1.063-.929 2.631-.956 4.09-.664A11.956 11.956 0 0 1 15 2.82z"/>
+            <path fill-rule="evenodd"
+                  d="M3.214 1.072C4.813.752 6.916.71 8.354 2.146A.5.5 0 0 1 8.5 2.5v11a.5.5 0 0 1-.854.354c-.843-.844-2.115-1.059-3.47-.92-1.344.14-2.66.617-3.452 1.013A.5.5 0 0 1 0 13.5v-11a.5.5 0 0 1 .276-.447L.5 2.5l-.224-.447.002-.001.004-.002.013-.006a5.017 5.017 0 0 1 .22-.103 12.958 12.958 0 0 1 2.7-.869z"/>
+        </svg>
+        在线图书商城
+    </h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/">首 页</a>
+    </nav>
+    <form class="form-inline my-2 my-md-0 mr-md-3" action="/books/search">
+        <input class="form-control mr-sm-2" type="search" name="key" placeholder="图书名字" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜 索</button>
+    </form>
+    <nav class="my-2 my-md-0 mr-md-3" th:if="${session.U == null}">
+        <a class="btn btn-outline-primary" th:href="@{/user/register}">注 册</a>
+        <a class="btn btn-outline-primary" th:href="@{/user/login}">登 录</a>
+    </nav>
+    <div class="my-2 my-md-0 mr-md-3" th:if="${session.U != null}">
+        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+            个人中心
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" th:href="@{/user/surplus}">查看余额</a>
+            <a class="dropdown-item" th:href="@{/user/shop}">我的购物车</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" th:href="@{/user/logout}">退出系统</a>
+        </div>
+    </div>
+</div>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">
+        <svg class="bi bi-columns-gap" width="0.8em" height="0.8em" viewBox="0 0 16 16" fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                  d="M6 1H1v3h5V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12h-5v3h5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8H1v7h5V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6h-5v7h5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
+        </svg>
+        图书展示
+    </h1>
+    <p class="lead">我们正在销售的图书,你可以浏览当前所有图书.</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" th:each="bk:${list}">
+            <div class="card mb-4 shadow-sm">
+
+                <img th:src="${bk.getPicUrl()}" width="100%" height="100px"
+                     class="img-fluid" alt="book">
+                <div class="card-body">
+                    <p class="card-text ">书名:《<span th:text="${bk.getBookName()}"></span>》</p>
+                    <p class="card-text ">作者: <span th:text="${bk.getAuthor()}"></span></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a th:href="@{/user/shop/add/{id}(id=${bk.getId()})}" class="btn btn-sm btn-danger">加入购物车</a>
+                            <a th:href="@{/books/{id}(id=${bk.getId()})}" class="btn btn-sm btn-primary">查看介绍</a>
+                        </div>
+                        <h6 class="text-warning">￥<span th:text="${bk.getMoney()}"></span></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <!--                <img class="mb-2" src="../assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">-->
+                <small class="d-block mb-3 text-muted">图书管理系统&copy; 2020</small>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script type="application/javascript" th:src="@{/static/js/bootstrap.bundle.js}"></script>
+<script type="application/javascript" th:src="@{/static/js/bootstrap.js}"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package me.ibyte.pcb.mall;
+package me.ibyte.book.mall;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;

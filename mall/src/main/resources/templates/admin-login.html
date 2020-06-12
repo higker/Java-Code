@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>图书系统 · 管理员登录</title>
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/static/css/admin.css}" rel="stylesheet">
+    <link th:href="@{/static/css/bootstrap.css}" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+<body class="text-center">
+<form class="form-signin" method="post" action="/admin/login">
+    <div class="md-4">
+        <svg class="bi bi-person-lines-fill" width="72" height="72" viewBox="0 0 16 16" fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                  d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+    </div>
+    <h1 class="h3 mb-3 font-weight-normal">图书管理员</h1>
+    <small  class="form-text text-muted" th:if="${msg != null}"><span th:text="${msg}"></span></small>
+    <label for="inputEmail" class="sr-only">管理员账号</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="管理员账号" name="account" required autofocus>
+    <label for="inputPassword" class="sr-only">管理员密码</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="管理员密码" name="password" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">登 录</button>
+    <p class="mt-5 mb-3 text-muted">&copy;2020</p>
+</form>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script type="application/javascript" th:src="@{/static/js/bootstrap.bundle.js}"></script>
+<script type="application/javascript" th:src="@{/static/js/bootstrap.js}"></script>
+</body>
+</html>
