@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+
+
+    <title>上海帝赐自动化科技有限公司</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet"  >
+    <meta name="theme-color" content="#563d7c">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link th:href="@{/static/css/dashboard.css}" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">上海帝赐管理员系统</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <ul class="navbar-nav px-3">
+        <!--        <li class="nav-item text-nowrap">-->
+        <!--            <a class="nav-link" href="#">退出登录</a>-->
+        <!--        </li>-->
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="sidebar-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/admin/product}">
+                            <span data-feather="home"></span>
+                            产品管理 <span class="sr-only"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"th:href="@{/admin/booking/}">
+                            <span data-feather="file"></span>
+                            预约管理
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">添加产品</h1>
+            </div>
+            <div class="card">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <form method="post" action="/admin/product/add">
+                                <div class="form-group">
+                                    <label >机器人名称</label>
+                                    <input type="text" class="form-control" name="name"
+                                    >
+<!--                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with-->
+<!--                                        anyone else.</small>-->
+                                </div>
+                                <div class="form-group">
+                                    <label >产品图片链接</label>
+                                    <input type="text" class="form-control" name="imgUrl">
+                                </div>
+                                <button type="submit" class="btn btn-primary">添加产品</button>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <img src="http://www.szcyrobot.com/uploads/180323/1-1P323110920162.jpg" width="100%" alt="book" class="img-thumbnail">
+                            <!--                            <form>-->
+                            <!--                                <div class="form-group">-->
+                            <!--                                    <label >上传封面</label>-->
+                            <!--                                    <input type="file" id="file" class="form-control-file" onclick="uploadImg()">-->
+                            <!--                                </div>-->
+                            <!--                            </form>-->
+                        </div>
+        </main>
+    </div>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script type="application/javascript" th:src="@{/static/js/bootstrap.bundle.js}"></script>
+<script type="application/javascript" th:src="@{/static/js/bootstrap.min.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script th:src="@{/static/js/dashboard.js}"></script></body>
+</html>
